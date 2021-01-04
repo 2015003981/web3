@@ -20,10 +20,18 @@
       });
     ">HTML</a></li>
     <li><a href="2.html"<li><a onclick="
-      document.querySelector('article').innerHTML = '';
+      fetch('css').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      });
     ">CSS</a></li>
     <li><a onclick="
-
+      fetch('javascript').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      });
     ">JavaScript</a></li>
   </ol>
   <article></article>
